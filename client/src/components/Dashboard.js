@@ -6,7 +6,7 @@ import AddIcon from '@material-ui/icons/Add';
 
 class Dashboard extends Component {
   mapListItems() {
-    if (this.props.initialState !== undefined) {
+    if (this.props.initialState.length !== 0) {
       return this.props.initialState.map(item => {
         return (
           <div>
@@ -21,6 +21,16 @@ class Dashboard extends Component {
           </div>
         );
       });
+    }
+    else{
+      return (
+        <div>
+        <h2>Welcome to TravelBudd!</h2>
+        <p>
+          To get started, click <Link to="plan/add"><a>here</a></Link> or the red button on the bottom right corner.
+        </p>
+        </div>
+      );
     }
     return;
   }
